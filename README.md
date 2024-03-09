@@ -23,3 +23,19 @@ sudo systemctl start mysql
 
 5.  Test LAMP Stack:
     echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.p
+
+Part 2: Setting Up LEMP Stack on macOS
+
+1. Use Homebrew to install Nginx, MySQL, and PHP:
+   brew install nginx mysql php
+2. Start Nginx and MySQL:
+   sudo brew services start nginx
+   mysql.server start
+3. Configure Nginx for PHP: Edit the Nginx configuration file
+   sudo nano /usr/local/etc/nginx/nginx.conf
+4. Add the following line inside the http block to include PHP processing:
+   include /usr/local/etc/nginx/fastcgi.conf;
+5. Create a PHP info file in Nginx's document root directory:
+   echo "<?php phpinfo(); ?>" | sudo tee /usr/local/var/www/info.php
+6. Restart Nginx for the changes to take effect:
+   sudo brew services restart nginx
