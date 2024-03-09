@@ -1,5 +1,25 @@
 # Linux-assignment
 
+LAMP and LEMP are two popular stacks used for web development. Here's the full meaning of each:
+
+LAMP Stack:
+
+L - Linux: The operating system.
+A - Apache: The web server software.
+M - MySQL or MariaDB: The database management system.
+P - PHP, Perl, or Python: The programming language used for web development.
+The LAMP stack is a traditional and widely used open-source web development stack.
+
+LEMP Stack:
+
+L - Linux: The operating system.
+E - Nginx: The web server software, pronounced "engine-x".
+M - MySQL or MariaDB: The database management system.
+P - PHP, Perl, or Python: The programming language used for web development.
+The LEMP stack is similar to the LAMP stack but replaces Apache with Nginx as the web server, known for its performance and scalability advantages in high-traffic environments.
+
+Both stacks provide a platform for hosting dynamic websites and web applications, with slight differences in the web server software used.
+
 Part 1: Setting Up LAMP Stack
 
 1. Launch EC2 Instance:
@@ -20,9 +40,10 @@ Part 1: Setting Up LAMP Stack
 
 sudo systemctl start apache2
 sudo systemctl start mysql
+sudo systemctl status apache2
 
 5.  Test LAMP Stack:
-    echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.p
+    echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
 
 Part 2: Setting Up LEMP Stack on macOS
 
